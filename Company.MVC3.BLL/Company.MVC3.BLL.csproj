@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Compang.MVC3.DAL\Compang.MVC3.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
