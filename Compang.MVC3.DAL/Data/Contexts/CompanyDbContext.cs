@@ -12,7 +12,7 @@ namespace Compang.MVC3.DAL.Data.Contexts
     public class CompanyDbContext: DbContext
     {
 
-        public CompanyDbContext() : base()
+        public CompanyDbContext(DbContextOptions<CompanyDbContext> options) : base(options)
         {
 
         }
@@ -20,11 +20,11 @@ namespace Compang.MVC3.DAL.Data.Contexts
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server =NADAAEISSAA; Database = Companyy ; Tursted_Connection = True; TrustedServerCertificate = True ");
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("Server = NADAAEISSAA; Database = Companyy ; Tursted_Connection = True; TrustedServerCertificate = True ");
 
-        }
+        //}
 
         public DbSet<Department> Departments { get; set; }
     }

@@ -12,11 +12,12 @@ namespace Company.MVC3.BLL.Repositories
     public class DepartmentRepository : IDepartmentRepository
     {
 
+
         private readonly CompanyDbContext _Context;
 
-        public DepartmentRepository()
+        public DepartmentRepository(CompanyDbContext context)
         {
-            _Context = new CompanyDbContext();
+            _Context = context;
         }
         public int Add(Department model)
         {
@@ -37,9 +38,9 @@ namespace Company.MVC3.BLL.Repositories
 
         public Department Get(int id)
         {
-            using CompanyDbContext context = new CompanyDbContext();
+          
 
-            return context.Departments.Find(id);
+            return _Context.Departments.Find(id);
         }
 
         public IEnumerable<Department> GetAll()
@@ -47,6 +48,7 @@ namespace Company.MVC3.BLL.Repositories
          
 
             return _Context.Departments.ToList();
+
                 }
 
         public int Update(Department model)
