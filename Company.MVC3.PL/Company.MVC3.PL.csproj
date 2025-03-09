@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Compang.MVC3.DAL\Compang.MVC3.DAL.csproj" />
     <ProjectReference Include="..\Company.MVC3.BLL\Company.MVC3.BLL.csproj" />
   </ItemGroup>
 
